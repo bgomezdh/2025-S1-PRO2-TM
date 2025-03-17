@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autos</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <%- include('./partials/header') %>
+
+    <% if (habilitado) { %>
+            <i>Este listado esta habilitado</i>
+    <% } else { %>  
+        <i>Este listado NOOOO esta habilitado</i>
+    <% } %>
+
+
+    <h1>Autos: <%= tipoListado %></h1>
+
+    <ul>
+        <% for( let i = 0; i < listado.length; i++ ) { %>
+        
+            <li>
+                <a href="/products/detalle/<%= listado[i].id %>">  
+                    <%= listado[i].marca %> - 
+                    <%= listado[i].color %> -
+                    <%= listado[i].anio %> -
+                </a>
+            </li>
+
+        <% } %>
+    </ul>
+
+    <img src="/images/fondo.jpg" alt="">
+    
+    <%- include('./partials/footer') %>
+</body>
+</html>
