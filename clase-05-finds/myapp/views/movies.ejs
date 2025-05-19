@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UdeSA Movies</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <%- include("./partials/header.ejs") %>
+    <%- include("./partials/menu.ejs") %>
+
+    <h2>Lista de todos los títulos de películas</h2>
+    <p>Hacer click en cada título debe llevar al detalle de la película clickeada.</p>
+       
+      <ul>
+        <% for (let i=0; i<movies.length; i++) { %>
+              <li>
+                <a href="/movies/id/<%= movies[i].id %>"><%= movies[i].title %></a>
+              </li>
+          <% } %>
+        </ul>
+
+  </body>
+</html>
